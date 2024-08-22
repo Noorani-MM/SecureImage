@@ -9,7 +9,7 @@
             "NooraniMm\\SecurePicture\\": "src/"
         }
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Mohammad Mahdi",

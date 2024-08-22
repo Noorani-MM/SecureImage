@@ -18,6 +18,6 @@
     ],
     "require": {
         "ext-openssl": "*",
-        "illuminate/support": "^11.21"
+        "illuminate/support": "^11.0"
     }
 }

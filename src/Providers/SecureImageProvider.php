@@ -5,7 +5,7 @@ namespace NooraniMm\SecurePicture\Providers;
 use Illuminate\Support\ServiceProvider;
 use NooraniMm\SecurePicture\Services\SecureImageService;
 
-class SecurePictureProvider extends ServiceProvider
+class SecureImageProvider extends ServiceProvider
 {
     public function register()
     {

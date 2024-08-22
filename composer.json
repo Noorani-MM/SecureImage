@@ -1,0 +1,18 @@
+{
+    "name": "noorani-mm/secure-picture",
+    "description": "Make your image files secure by encoding and decoding",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NooraniMm\\SecurePicture\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohammad Mahdi",
+            "email": "matio.nora2000@gmail.com"
+        }
+    ],
+    "require": {}
+}

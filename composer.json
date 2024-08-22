@@ -3,6 +3,7 @@
     "description": "Make your image files secure by encoding and decoding",
     "type": "library",
     "license": "MIT",
+    "keywords": ["php", "secure image", "image encryption", "image decryption"],
     "autoload": {
         "psr-4": {
             "NooraniMm\\SecurePicture\\": "src/"

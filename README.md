@@ -5,7 +5,7 @@ Make your image files secure by this package.
 ## Install package
 
 ```bash
-composer require noorani-mm/secure-picture
+composer require noorani-mm/secure-image
 ```
 
 ### Laravel 11, installation

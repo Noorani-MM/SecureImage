@@ -1,5 +1,5 @@
 {
-    "name": "noorani-mm/secure-picture",
+    "name": "noorani-mm/secure-image",
     "description": "Make your image files secure by encoding and decoding",
     "type": "library",
     "license": "MIT",

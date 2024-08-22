@@ -35,4 +35,18 @@ class SecureImageService
 
         return openssl_decrypt($encrypted_data, $this->_cipher, $this->_key, 0, $iv);
     }
+
+    public function storeAsEncrypted(string $imagePath, string $output): void
+    {
+        $encrypted = $this->encrypt($imagePath);
+
+        file_put_contents($output, $encrypted);
+    }
+
+    public function storeAsDecrypted(string $imagePath, string $output): void
+    {
+        $decrypted = $this->decrypt($imagePath);
+
+        file_put_contents($output, $decrypted);
+    }
 }

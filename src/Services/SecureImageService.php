@@ -25,9 +25,9 @@ class SecureImageService
         return base64_encode($iv.$encrypt_data);
     }
 
-    public function decrypt(string $imagePath): false|string
+    public function decrypt(string $encrypted_data): false|string
     {
-        $encrypted_data = base64_decode($imagePath);
+        $encrypted_data = base64_decode($encrypted_data);
 
         $ivLength = openssl_cipher_iv_length($this->_cipher);
         $iv = substr($encrypted_data, 0, $ivLength);
@@ -43,10 +43,24 @@ class SecureImageService
         file_put_contents($output, $encrypted);
     }
 
-    public function storeAsDecrypted(string $imagePath, string $output): void
+    public function storeAsDecrypted(string $encrypted_data, string $output): void
     {
-        $decrypted = $this->decrypt($imagePath);
+        $decrypted = $this->decrypt($encrypted_data);
 
         file_put_contents($output, $decrypted);
+    }
+
+    public function decryptedByPath(string $image_path): false|string
+    {
+        $content = file_get_contents($image_path);
+
+        return $this->decrypt($content);
+    }
+
+    public function decryptedByPathAndStore(string $image_path, string $output): void
+    {
+        $content = file_get_contents($image_path);
+
+        $this->storeAsDecrypted($content, $output);
     }
 }

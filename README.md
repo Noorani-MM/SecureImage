@@ -53,8 +53,8 @@ SecureImage::storeAsEncrypted('picture.jpg', 'encrypted.jpg');
 
 ```php
 use \NooraniMm\SecurePicture\Facades\SecureImage;
-
-$decrypted_content = SecureImage::decrypt('encrypted.jpg');
+$encrypted_data = file_get_contents('encrypted.jpg');
+$decrypted_content = SecureImage::decrypt($encrypted_data);
 ```
 
 - If you want to store decrypted file you should use
@@ -62,5 +62,22 @@ $decrypted_content = SecureImage::decrypt('encrypted.jpg');
 ```php
 use \NooraniMm\SecurePicture\Facades\SecureImage;
 
-SecureImage::storeAsDecrypted('encrypted.jpg', 'output.jpg');
+$encrypted_content = file_get_contents('encrypted.jpg');
+SecureImage::storeAsDecrypted($encrypted_content, 'output.jpg');
+```
+
+- If you want to decrypt file by path you should use 
+
+```php
+use NooraniMm\SecurePicture\Facades\SecureImage;
+
+$decrypted_data = SecureImage::decryptByPath('encrypted.jpg');
+```
+
+- If you want to decrypt and store it by path you should use 
+
+```php
+use \NooraniMm\SecurePicture\Facades\SecureImage;
+
+SecureImage::decryptedByPathAndStore('encrypted.jpg', 'output.jpg');
 ```
